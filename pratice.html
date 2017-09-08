@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card-2" style="width:130px">
+  <h5 class="w3-bar-item">Home</h5>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Functions and Models')">Functions and Models</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Limits and Derivatives')">Limits and Derivatives</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Differentiation Rules')">Differentiation Rules</button>
+</div>
+
+<div style="margin-left:130px">
+  <div class="w3-padding">Vertical Tab Example (sidebar)</div>
+
+  <div id="Functions and Models" class="w3-container city" style="display:none"></div>
+
+  <div id="Limits and Derivatives" class="w3-container city"style="display:none"></div>
+
+  <div id="Differentiation Rules" class="w3-container city" style="display:none"></div>
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", ""); 
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+</body>
+</html>
